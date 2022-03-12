@@ -16,7 +16,7 @@
   \********************************/
 /***/ (function() {
 
-
+eval("\n\nfunction sayHello() {\n  alert('Hllo');\n}\n\nconsole.log('a');//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiLi9yZXNvdXJjZXMvdHMvaW5kZXgudHN4LmpzIiwibWFwcGluZ3MiOiJBQUFhOztBQUNiLFNBQVNBLFFBQVQsR0FBb0I7QUFDaEJDLEVBQUFBLEtBQUssQ0FBQyxNQUFELENBQUw7QUFDSDs7QUFDREMsT0FBTyxDQUFDQyxHQUFSLENBQVksR0FBWiIsInNvdXJjZXMiOlsid2VicGFjazovLy8uL3Jlc291cmNlcy90cy9pbmRleC50c3g/MzY0NyJdLCJzb3VyY2VzQ29udGVudCI6WyJcInVzZSBzdHJpY3RcIjtcbmZ1bmN0aW9uIHNheUhlbGxvKCkge1xuICAgIGFsZXJ0KCdIbGxvJyk7XG59XG5jb25zb2xlLmxvZygnYScpO1xuIl0sIm5hbWVzIjpbInNheUhlbGxvIiwiYWxlcnQiLCJjb25zb2xlIiwibG9nIl0sInNvdXJjZVJvb3QiOiIifQ==\n//# sourceURL=webpack-internal:///./resources/ts/index.tsx\n");
 
 /***/ }),
 
