@@ -1,3 +1,4 @@
 function sayHello() {
-    alert('Hllo');
+    alert('Hllo')
 }
+console.log('a')

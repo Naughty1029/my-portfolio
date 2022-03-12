@@ -44,11 +44,11 @@
     },
     "husky": {
         "hooks": {
-            "pre-commit": "npm run fix"
+            "pre-commit": "lint-staged"
         }
     },
     "lint-staged": {
-        "./resources/**/*.{tsx}": [
+        "resources/**/*.{js,jsx,ts,tsx}": [
             "npm run fix"
         ]
     },
