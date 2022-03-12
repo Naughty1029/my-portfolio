@@ -8,18 +8,32 @@
         "hot": "mix watch --hot",
         "prod": "npm run production",
         "production": "mix --production",
-        "lint": "eslint --fix 'resources/**/*.{js,ts,tsx}'",
-        "lint-fix": "eslint --fix './resources/**/*.{js,ts,tsx}' && prettier --write './resources/**/*.{js,ts,tsx}'"
+        "lint": "eslint --ext .ts,.tsx ./resources",
+        "fix": "npm run format && npm run lint:fix",
+        "format": "prettier --write 'resources/**/*.{js,jsx,ts,tsx}'",
+        "lint:fix": "eslint --fix 'resources/**/*.{js,jsx,ts,tsx}'"
     },
     "devDependencies": {
         "@types/react": "^17.0.39",
         "@types/react-dom": "^17.0.13",
+        "@typescript-eslint/eslint-plugin": "^5.14.0",
+        "@typescript-eslint/parser": "^5.14.0",
         "axios": "^0.21",
         "browser-sync": "^2.27.7",
-        "browser-sync-webpack-plugin": "^0.1.0",
+        "browser-sync-webpack-plugin": "^2.3.0",
+        "eslint": "^8.11.0",
+        "eslint-config-airbnb": "^19.0.4",
+        "eslint-config-prettier": "^8.5.0",
+        "eslint-plugin-import": "^2.25.4",
+        "eslint-plugin-jsx-a11y": "^6.5.1",
+        "eslint-plugin-react": "^7.29.3",
+        "eslint-plugin-react-hooks": "^4.3.0",
+        "husky": "^7.0.4",
         "laravel-mix": "^6.0.6",
+        "lint-staged": "^12.3.5",
         "lodash": "^4.17.19",
         "postcss": "^8.1.14",
+        "prettier": "^2.5.1",
         "react": "^17.0.2",
         "react-dom": "^17.0.2",
         "resolve-url-loader": "^5.0.0",
@@ -27,6 +41,16 @@
         "sass-loader": "^12.6.0",
         "ts-loader": "^9.2.7",
         "typescript": "^4.6.2"
+    },
+    "husky": {
+        "hooks": {
+            "pre-commit": "lint-staged"
+        }
+    },
+    "lint-staged": {
+        "resources/**/*.{js,jsx,ts,tsx}": [
+            "npm run fix"
+        ]
     },
     "browserslist": [
         "last 1 version",
