@@ -48,7 +48,7 @@
         }
     },
     "lint-staged": {
-        "resources/**/*.{js,jsx,ts,tsx}": [
+        "resources/**/*.{tsx}": [
             "npm run fix"
         ]
     },
