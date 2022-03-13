@@ -18,6 +18,6 @@ mix.setPublicPath('public_html/')
 
 mix.browserSync('my-portfolio.test');
 
-if (mix.inProduction()) {
-    mix.version();
-}
+// if (mix.inProduction()) {
+//     mix.version();
+// }

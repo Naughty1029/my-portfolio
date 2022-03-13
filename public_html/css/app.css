@@ -1,1 +1,348 @@
+@charset "UTF-8";
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
 
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/**
+ * メディアクエリ
+ * @param {string} $mode - max または min
+ * @param {number} $width - 設定値
+ */
+/**
+ * メディアクエリ PC
+ * @param {number} [$width:$breakpoin] - 設定値
+ */
+/**
+ * メディアクエリ SP
+ * @param {number} [$width:$breakpoin] - 設定値
+ */
+/**
+ * メディアクエリによるIE11ハック（ChromiumベースのEdgeは除外できる。旧Edgeは除外できない）
+ */
+* {
+  box-sizing: border-box;
+}
+
+#app {
+  max-width: 1100px;
+  margin: 0 auto;
+  min-width: 320px;
+  color: #333333;
+  font-family: ab-megadot9, sans-serif;
+  line-height: 1;
+  font-style: normal;
+  font-weight: 400;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex-grow: 1;
+}
+
+a {
+  text-decoration: none;
+  color: #0000ef;
+  text-decoration: underline;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  width: 100%;
+}
+
+.globalHeader {
+  padding: 45px 60px 0;
+  position: relative;
+}
+@media screen and (max-width: 767px) {
+  .globalHeader {
+    padding: 30px 15px 0;
+  }
+}
+.globalHeader h1 {
+  max-width: 500px;
+  margin: 0 auto 30px;
+}
+.globalHeader ul {
+  display: flex;
+}
+@media screen and (max-width: 1100px) {
+  .globalHeader ul {
+    max-width: 500px;
+    margin: 0 auto 22px;
+    justify-content: space-between;
+  }
+}
+@media screen and (max-width: 767px) {
+  .globalHeader ul {
+    margin-bottom: 0;
+  }
+}
+.globalHeader ul li {
+  text-align: center;
+  max-width: 80px;
+  flex: 1;
+}
+@media screen and (min-width: 1100px) {
+  .globalHeader ul li {
+    width: 80px;
+    position: absolute;
+    top: 20px;
+  }
+  .globalHeader ul li:first-child {
+    left: 60px;
+  }
+  .globalHeader ul li:nth-child(2) {
+    left: 178px;
+  }
+  .globalHeader ul li:nth-child(3) {
+    right: 178px;
+  }
+  .globalHeader ul li:nth-child(4) {
+    right: 60px;
+  }
+}
+@media screen and (max-width: 767px) {
+  .globalHeader ul li:not(:last-child) {
+    margin-right: 10px;
+  }
+}
+.globalHeader ul li p {
+  margin-top: 5px;
+  font-size: 14px;
+  line-height: 2;
+}
+
+.globalFooter {
+  margin: 60px 60px 0;
+  padding-top: 30px;
+  border-top: 1px solid #acacac;
+}
+@media screen and (max-width: 767px) {
+  .globalFooter {
+    margin: 30px 15px 0;
+  }
+}
+.globalFooter ul {
+  display: flex;
+  justify-content: space-around;
+}
+.globalFooter .copyright {
+  padding: 20px 0;
+  border-top: 1px solid #acacac;
+  text-align: center;
+  margin-top: 30px;
+  font-size: 12px;
+  line-height: 2;
+}
+@media screen and (max-width: 767px) {
+  .globalFooter .copyright {
+    font-size: 10px;
+  }
+}
+
+#top {
+  margin-top: 40px;
+}
+@media screen and (max-width: 767px) {
+  #top {
+    margin-top: 20px;
+    padding: 0 15px;
+  }
+}
+#top .searchBox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#top .searchBox input[type=text] {
+  display: block;
+  max-width: 300px;
+  width: 100%;
+  padding: 5px;
+  margin: 0;
+  border: 1px solid #acacac;
+  border-radius: 0;
+  font-family: ab-megadot9, sans-serif;
+}
+#top .searchBox input[type=text]:focus {
+  outline: none;
+}
+#top .searchBox button[type=submit] {
+  font-family: ab-megadot9, sans-serif;
+  display: block;
+  padding: 5px;
+  background-color: #efefef;
+  border: 1px solid #acacac;
+  margin-left: 10px;
+  cursor: pointer;
+}
+#top .searchBox .searchOption {
+  margin-left: 10px;
+  font-size: 12px;
+}
+#top .searchOptions {
+  display: none;
+  background-color: #cccccc;
+  margin: 30px 60px 0;
+  padding: 20px 60px;
+}
+#top .searchOptions.active {
+  display: block;
+}
+#top .searchOptions p {
+  text-align: center;
+  font-size: 14px;
+}
+#top .searchOptions ul {
+  display: flex;
+  flex-wrap: wrap;
+}
+#top .searchOptions ul li {
+  margin-top: 20px;
+  margin-right: 20px;
+}
+#top .searchOptions ul li input[type=checkbox] {
+  margin: 0;
+  margin-right: 5px;
+  border: 1px solid #acacac;
+  border-radius: 0;
+}
+#top .searchOptions ul li input[type=checkbox]:focus {
+  outline: none;
+}
+#top .searchOptions ul li label {
+  cursor: pointer;
+}
+#top .workLists {
+  margin-top: 40px;
+}
+@media screen and (min-width: 768px) {
+  #top .workLists {
+    padding: 0 60px;
+  }
+}
+@media screen and (max-width: 767px) {
+  #top .workLists {
+    margin-top: 20px;
+  }
+}
+#top .workLists li {
+  padding-left: 20px;
+  position: relative;
+  line-height: 2;
+}
+#top .workLists li::before {
+  content: "";
+  display: block;
+  width: 6px;
+  height: 6px;
+  background-color: #333;
+  border-radius: 50%;
+  position: absolute;
+  left: 0;
+  top: 12px;
+}
+#top .workLists li:not(:first-child) {
+  margin-top: 20px;
+}
+#top .workLists li a:first-of-type {
+  font-size: 20px;
+}
+@media screen and (max-width: 767px) {
+  #top .workLists li a:first-of-type {
+    font-size: 18px;
+  }
+}
+#top .workLists li a:nth-of-type(2)::after {
+  content: ",";
+}
+#top .workLists li a:not(:first-of-type) {
+  font-style: italic;
+}
+
+#about {
+  margin: 20px auto 0;
+  max-width: 1000px;
+  padding: 0 100px;
+}
+#about .title {
+  text-align: center;
+  font-size: 30px;
+  margin-bottom: 40px;
+}
+#about .subtitle {
+  font-size: 24px;
+  padding-bottom: 5px;
+  border-bottom: 1px solid #acacac;
+  margin: 40px 0 20px;
+}
+#about .message {
+  margin-bottom: 10px;
+  line-height: 2;
+}
+
+#notfound {
+  margin: 20px 60px;
+}
+#notfound .title {
+  background-color: #a0b8c8;
+  padding: 10px 20px;
+  font-size: 20px;
+}
+#notfound .message {
+  padding: 20px 20px;
+}

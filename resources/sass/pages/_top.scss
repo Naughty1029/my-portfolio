@@ -1,0 +1,116 @@
+#top{
+	margin-top: 40px;
+	@include SP{
+		margin-top: 20px;
+		padding: 0 15px;
+	}
+	.searchBox{
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		input[type=text]{
+			display: block;
+			max-width: 300px;
+			width: 100%;
+			padding: 5px;
+			margin: 0;
+			border: 1px solid #acacac;
+			border-radius:0;
+			font-family: $baseFontFamily;
+			&:focus{
+				outline: none;
+			}
+		}
+		button[type=submit]{
+			font-family: $baseFontFamily;
+			display: block;
+			padding: 5px;
+			background-color: #efefef;
+			border: 1px solid #acacac;
+			margin-left: 10px;
+			cursor: pointer;
+		}
+		
+		.searchOption{
+			margin-left: 10px;
+			font-size: 12px;
+		}
+	}
+	.searchOptions{
+		display: none;
+		background-color: #cccccc;
+		margin: 30px 60px 0;
+		padding: 20px 60px;
+		&.active{
+			display: block;
+		}
+		p{
+			text-align: center;
+			font-size: 14px;
+		}
+		ul{
+			display: flex;
+			flex-wrap: wrap;
+			li{
+				margin-top: 20px;
+				margin-right: 20px;
+				input[type=checkbox]{
+					margin: 0;
+					margin-right: 5px;
+					border: 1px solid #acacac;
+					border-radius:0;
+					&:focus{
+						outline: none;
+					}
+				}
+				label{
+					cursor: pointer;
+				}
+			}
+		}
+	}
+	.workLists{
+		margin-top: 40px;
+		@include PC{
+			padding: 0 60px;
+		}
+		@include SP{
+			margin-top: 20px;
+		}
+		li{
+			padding-left: 20px;
+			position: relative;
+			line-height: 2;
+			&::before{
+				content: "";
+				display: block;
+				width: 6px;
+				height: 6px;
+				background-color: #333;
+				border-radius: 50%;
+				position: absolute;
+				left: 0;
+				top: 12px;
+			}
+			&:not(:first-child){
+				margin-top: 20px;
+			}
+			a{
+				&:first-of-type{
+					font-size: 20px;
+					@include SP{
+						font-size: 18px;
+					}
+				}
+				&:nth-of-type(2){
+					&::after{
+						content: ",";
+					}
+				}
+				&:not(:first-of-type){
+					font-style: italic;
+				}
+			}
+		}
+	}
+}

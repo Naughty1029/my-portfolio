@@ -1,0 +1,33 @@
+*{
+	box-sizing: border-box;
+}
+
+#app {
+	max-width: 1100px;
+	margin: 0 auto;
+	min-width: 320px;
+	color: $baseTextColor;
+	font-family: $baseFontFamily;
+	line-height: $baseLineHeight;
+	font-style: normal;
+	font-weight: 400;
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+}
+
+main{
+	flex-grow: 1;
+}
+
+a {
+	text-decoration: none;
+	color: #0000ef;
+	text-decoration: underline;
+}
+
+img {
+	display: block;
+	max-width: 100%;
+	width: 100%;
+}

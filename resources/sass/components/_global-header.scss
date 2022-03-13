@@ -1,0 +1,54 @@
+.globalHeader {
+    padding: 45px 60px 0;
+    position: relative;
+    @include SP{
+        padding: 30px 15px 0;
+    }
+    h1{
+        max-width: 500px;
+        margin: 0 auto 30px;
+    }
+    ul{
+        display: flex;
+        @include mq(max,1100){
+            max-width: 500px;
+            margin: 0 auto 22px;
+            justify-content: space-between;
+        }
+        @include SP{
+            margin-bottom: 0;
+        }
+        li{
+            text-align: center;
+            max-width: 80px;
+            flex: 1;
+            @include mq(min,1100){
+                width: 80px;
+                position: absolute;
+                top: 20px;
+                &:first-child{
+                    left: 60px;
+                }
+                &:nth-child(2){
+                    left: 178px;
+                }
+                &:nth-child(3){
+                    right: 178px;
+                }
+                &:nth-child(4){
+                    right: 60px;
+                }
+            }
+            @include SP{
+                &:not(:last-child){
+                    margin-right: 10px;
+                }
+            }
+            p{
+                margin-top: 5px;
+                font-size: 14px;
+                line-height: 2;
+            }
+        }
+    }
+}
