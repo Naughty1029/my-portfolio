@@ -1,15 +1,15 @@
 module.exports = {
   env: {
     browser: true,
-    es2021: true,
+    es6: true
   },
   extends: [
-    'plugin:react/recommended',
-    'airbnb',
-    'airbnb/hooks',
-    'plugin:@typescript-eslint/recommended',
-    'plugin:@typescript-eslint/recommended-requiring-type-checking',
-    'prettier',
+    "eslint:recommended",
+    "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:react/recommended",
+    "plugin:react-hooks/recommended",
+    "prettier"
   ],
   parser: '@typescript-eslint/parser',
   parserOptions: {
@@ -18,49 +18,18 @@ module.exports = {
     },
     ecmaVersion: 'latest',
     sourceType: 'module',
-    tsconfigRootDir: __dirname,
-    project: ['./tsconfig.json'],
+    project: "./tsconfig.json" // TypeScriptのLint時に参照するconfigファイルを指定
   },
-  plugins: [
-    'react',
-    '@typescript-eslint',
-  ],
-  "ignorePatterns": [
-    ".eslintrc.js"
-  ],
+  plugins: ["react-hooks", "react", "@typescript-eslint"],
   rules: {
-    'no-use-before-define': "off",
-    "@typescript-eslint/no-use-before-define": "off",
-    'import/prefer-default-export': "off",
-    'import/extensions': [
-        'error',
-        {
-          js: 'never',
-          jsx: 'never',
-          ts: 'never',
-          tsx: 'never',
-        },
-      ],
-      'react/jsx-filename-extension': [
-        'error',
-        {
-          extensions: ['.jsx', '.tsx'],
-        },
-      ],
-      'react/react-in-jsx-scope': 'off',
-      'no-void': [
-        'error',
-        {
-          allowAsStatement: true,
-        },
-      ],
+    // TypeScirpt なので prop-types は要らない
+    "react/prop-types": "off",
+    "react/react-in-jsx-scope": "off",
   },
+  root: true, // 上位ディレクトリにある他のeslintrcを参照しないようにする
   settings: {
-    'import/resolver': {
-      node: {
-        paths: ['src'],
-        extensions: ['.js', '.jsx', '.ts', '.tsx']
-      },
-    },
+    "react": {
+      "version": "detect"
+    }
   },
 };
