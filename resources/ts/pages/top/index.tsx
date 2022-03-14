@@ -1,3 +1,5 @@
+import { WorkList } from './components/WorkList'
+
 export const TopPage: React.VFC = () => {
     return (
         <>
@@ -34,16 +36,7 @@ export const TopPage: React.VFC = () => {
                         </ul>
                     </div>
                 </form>
-                <ul className="workLists">
-                    <li>
-                        <a href="http://" target="_blank" rel="noopener noreferrer">
-                            ASA石神井グループ HP
-                        </a>
-                        <span>- -</span>
-                        <a href="">WordPressで新聞配達屋さんのホームページをつくりました</a>
-                        <a href="">GitHub</a>
-                    </li>
-                </ul>
+                <WorkList />
             </main>
         </>
     )
