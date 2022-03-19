@@ -1,43 +1,23 @@
+import { SearchForm } from './components/SearchForm'
 import { WorkList } from './components/WorkList'
+import { useState } from 'react'
+
+type Works = {
+    id: number
+    title: string
+    comment: string
+    url: string
+    github: string | null
+}
 
 export const TopPage: React.VFC = () => {
+    const [works, setWorks] = useState<Works[]>([])
+    const updateWorks = (data: Works[]): void => setWorks(data)
+
     return (
-        <>
-            <main id="top">
-                <form>
-                    <div className="searchBox">
-                        <input type="text" name="" id="" />
-                        <button type="submit">Search</button>
-                        <p className="searchOption">
-                            <a href="#">options</a>
-                        </p>
-                    </div>
-                    <div className="searchOptions">
-                        <p>チェックをつけて、Searchボタンを押してください</p>
-                        <ul>
-                            <li>
-                                <label>
-                                    <input type="checkbox" name="react" />
-                                    React
-                                </label>
-                            </li>
-                            <li>
-                                <label>
-                                    <input type="checkbox" name="typescript" />
-                                    TypeScript
-                                </label>
-                            </li>
-                            <li>
-                                <label>
-                                    <input type="checkbox" name="wordpress" />
-                                    WordPress
-                                </label>
-                            </li>
-                        </ul>
-                    </div>
-                </form>
-                <WorkList />
-            </main>
-        </>
+        <main id="top">
+            <SearchForm works={works} />
+            <WorkList works={works} updateWorks={updateWorks} />
+        </main>
     )
 }

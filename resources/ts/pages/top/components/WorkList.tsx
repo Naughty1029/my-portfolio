@@ -1,6 +1,6 @@
-import { useEffect, useState } from 'react'
-import axios from 'axios'
 import { WorkItem } from './WorkItem'
+import { useEffect } from 'react'
+import axios from 'axios'
 
 type Works = {
     id: number
@@ -10,12 +10,15 @@ type Works = {
     github: string | null
 }
 
-export const WorkList: React.VFC = () => {
-    const [works, setWorks] = useState<Works[]>([])
+type Props = {
+    updateWorks: (data: any) => void
+    works: Works[]
+}
 
+export const WorkList: React.VFC<Props> = ({ updateWorks, works }) => {
     const getWorks = () => {
         axios.get('api/works').then((res) => {
-            setWorks(res.data)
+            updateWorks(res.data)
         })
     }
 

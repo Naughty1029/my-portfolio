@@ -2,10 +2,11 @@
 
 namespace Database\Seeders;
 
+use App\Models\Work;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
-class WorkSeeder extends Seeder
+class WorksTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -24,7 +25,7 @@ class WorkSeeder extends Seeder
                 "updated_at" => now(),
             ],
             [
-                'title' => 'Sample01',
+                'title' => 'ReactとTypeScript',
                 'comment' => 'テキストテキストテキストテキストテキストテキストテキストテキストテキスト',
                 'url' => 'https://sample.com/',
                 'github' => 'https://sample.com/',
@@ -32,7 +33,7 @@ class WorkSeeder extends Seeder
                 "updated_at" => now(),
             ],
             [
-                'title' => 'Sample02',
+                'title' => 'WordPressとPHP',
                 'comment' => 'テキストテキストテキストテキストテキストテキストテキストテキストテキスト',
                 'url' => 'https://sample.com/',
                 'github' => 'https://sample.com/',
@@ -40,7 +41,7 @@ class WorkSeeder extends Seeder
                 "updated_at" => now(),
             ],
             [
-                'title' => 'Sample03',
+                'title' => 'PHPとLaravel',
                 'comment' => 'テキストテキストテキストテキストテキストテキストテキストテキストテキスト',
                 'url' => 'https://sample.com/',
                 'github' => 'https://sample.com/',
@@ -48,7 +49,7 @@ class WorkSeeder extends Seeder
                 "updated_at" => now(),
             ],
             [
-                'title' => 'Sample04',
+                'title' => 'TypeScript',
                 'comment' => 'テキストテキストテキストテキストテキストテキストテキストテキストテキスト',
                 'url' => 'https://sample.com/',
                 'github' => 'https://sample.com/',
@@ -56,5 +57,19 @@ class WorkSeeder extends Seeder
                 "updated_at" => now(),
             ],
         ]);
+        $work = Work::find(1);
+        $work->categories()->sync([1,2,3]);
+
+        $work = Work::find(2);
+        $work->categories()->sync([4,5]);
+
+        $work = Work::find(3);
+        $work->categories()->sync([2,3]);
+
+        $work = Work::find(4);
+        $work->categories()->sync([2,6]);
+
+        $work = Work::find(5);
+        $work->categories()->sync([5]);
     }
 }

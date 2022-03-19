@@ -5,13 +5,11 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Work extends Model
+class Category extends Model
 {
     use HasFactory;
+
     protected $fillable = [
-        "title","comment",'url'
+        "category"
     ];
-    public function categories(){
-        return $this->belongsToMany(Category::class,WorkCategory::class);
-    }
 }

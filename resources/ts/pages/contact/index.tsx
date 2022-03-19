@@ -3,30 +3,9 @@ export const ContactPage: React.VFC = () => {
         <main id="about">
             <p className="title">Contact</p>
             <p className="message">
-                はじめまして。この度はわざわざプロフィールまでご覧いただきありがとうござます。
+                ご連絡は下記メールアドレスからお願いいたします。
                 <br />
-                このページにはわたしの経歴とスキル、そしてこれからの目標が書いてあります。どうぞお時間があるときにでも読んでくれたらうれしく思います。
-                <br />
-            </p>
-            <p className="subtitle">経歴</p>
-            <p className="message">
-                はじめまして。この度はわざわざプロフィールまでご覧いただきありがとうござます。
-                <br />
-                このページにはわたしの経歴とスキル、そしてこれからの目標が書いてあります。どうぞお時間があるときにでも読んでくれたらうれしく思います。
-                <br />
-            </p>
-            <p className="subtitle">スキル</p>
-            <p className="message">
-                はじめまして。この度はわざわざプロフィールまでご覧いただきありがとうござます。
-                <br />
-                このページにはわたしの経歴とスキル、そしてこれからの目標が書いてあります。どうぞお時間があるときにでも読んでくれたらうれしく思います。
-                <br />
-            </p>
-            <p className="subtitle">目標</p>
-            <p className="message">
-                はじめまして。この度はわざわざプロフィールまでご覧いただきありがとうござます。
-                <br />
-                このページにはわたしの経歴とスキル、そしてこれからの目標が書いてあります。どうぞお時間があるときにでも読んでくれたらうれしく思います。
+                <a href="mailto:masahiro.watanabe02@gmail.com">masahiro.watanabe02@gmail.com</a>
                 <br />
             </p>
         </main>
