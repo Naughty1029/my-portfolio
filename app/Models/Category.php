@@ -12,4 +12,8 @@ class Category extends Model
     protected $fillable = [
         "category"
     ];
+
+    public function works(){
+        return $this->belongsToMany(Work::class,WorkCategory::class);
+    }
 }

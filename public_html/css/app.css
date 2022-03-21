@@ -205,18 +205,32 @@ img {
 }
 #top .searchBox {
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
+}
+@media screen and (max-width: 767px) {
+  #top .searchBox {
+    flex-wrap: wrap;
+  }
 }
 #top .searchBox input[type=text] {
   display: block;
-  max-width: 300px;
   width: 100%;
   padding: 5px;
   margin: 0;
   border: 1px solid #acacac;
   border-radius: 0;
   font-family: ab-megadot9, sans-serif;
+}
+@media screen and (min-width: 768px) {
+  #top .searchBox input[type=text] {
+    max-width: 300px;
+  }
+}
+@media screen and (max-width: 767px) {
+  #top .searchBox input[type=text] {
+    margin-bottom: 15px;
+  }
 }
 #top .searchBox input[type=text]:focus {
   outline: none;
@@ -227,8 +241,12 @@ img {
   padding: 5px;
   background-color: #efefef;
   border: 1px solid #acacac;
-  margin-left: 10px;
   cursor: pointer;
+}
+@media screen and (min-width: 768px) {
+  #top .searchBox button[type=submit] {
+    margin-left: 10px;
+  }
 }
 #top .searchBox .searchOption {
   margin-left: 10px;
@@ -240,12 +258,28 @@ img {
   margin: 30px 60px 0;
   padding: 20px 60px;
 }
+@media screen and (max-width: 767px) {
+  #top .searchOptions {
+    margin: 30px 15px 0;
+    padding: 20px 15px;
+  }
+}
 #top .searchOptions.active {
   display: block;
 }
 #top .searchOptions p {
-  text-align: center;
-  font-size: 14px;
+  line-height: 1.5;
+}
+@media screen and (min-width: 768px) {
+  #top .searchOptions p {
+    font-size: 14px;
+    text-align: center;
+  }
+}
+@media screen and (max-width: 767px) {
+  #top .searchOptions p {
+    font-size: 12px;
+  }
 }
 #top .searchOptions ul {
   display: flex;
@@ -266,6 +300,20 @@ img {
 }
 #top .searchOptions ul li label {
   cursor: pointer;
+}
+#top .nothing {
+  margin-top: 40px;
+  text-align: center;
+}
+@media screen and (min-width: 768px) {
+  #top .nothing {
+    padding: 0 60px;
+  }
+}
+@media screen and (max-width: 767px) {
+  #top .nothing {
+    margin-top: 20px;
+  }
 }
 #top .workLists {
   margin-top: 40px;
@@ -318,6 +366,11 @@ img {
   margin: 20px auto 0;
   max-width: 1000px;
   padding: 0 100px;
+}
+@media screen and (max-width: 767px) {
+  #about {
+    padding: 0 15px;
+  }
 }
 #about .title {
   text-align: center;

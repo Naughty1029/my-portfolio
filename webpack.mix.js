@@ -14,10 +14,12 @@ const mix = require('laravel-mix');
 mix.setPublicPath('public_html/')
     .ts('resources/ts/index.tsx', 'public_html/js')
     .sass('resources/sass/app.scss', 'public_html/css')
+    .js('resources/js/app.js', 'public_html/auth/js')
+    .postCss('resources/css/app.css', 'public_html/auth/css', [
+        require('postcss-import'),
+        require('tailwindcss'),
+        require('autoprefixer'),
+    ])
     .sourceMaps();
 
 mix.browserSync('my-portfolio.test');
-
-// if (mix.inProduction()) {
-//     mix.version();
-// }

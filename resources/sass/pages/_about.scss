@@ -2,6 +2,9 @@
     margin: 20px auto 0;
     max-width: 1000px;
     padding: 0 100px;
+    @include SP{
+        padding: 0 15px;
+    }
     .title{
         text-align: center;
         font-size: 30px;

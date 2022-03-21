@@ -16,7 +16,7 @@ export const TopPage: React.VFC = () => {
 
     return (
         <main id="top">
-            <SearchForm works={works} />
+            <SearchForm updateWorks={updateWorks} />
             <WorkList works={works} updateWorks={updateWorks} />
         </main>
     )

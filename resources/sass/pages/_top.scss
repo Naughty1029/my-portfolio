@@ -6,17 +6,25 @@
 	}
 	.searchBox{
 		display: flex;
-		justify-content: center;
 		align-items: center;
+        justify-content: center;
+        @include SP{
+            flex-wrap: wrap;
+        }
 		input[type=text]{
 			display: block;
-			max-width: 300px;
 			width: 100%;
 			padding: 5px;
 			margin: 0;
 			border: 1px solid #acacac;
 			border-radius:0;
 			font-family: $baseFontFamily;
+            @include PC{
+                max-width: 300px;
+            }
+            @include SP{
+                margin-bottom: 15px;
+            }
 			&:focus{
 				outline: none;
 			}
@@ -27,10 +35,12 @@
 			padding: 5px;
 			background-color: #efefef;
 			border: 1px solid #acacac;
-			margin-left: 10px;
 			cursor: pointer;
+            @include PC{
+                margin-left: 10px;
+            }
 		}
-		
+
 		.searchOption{
 			margin-left: 10px;
 			font-size: 12px;
@@ -41,12 +51,22 @@
 		background-color: #cccccc;
 		margin: 30px 60px 0;
 		padding: 20px 60px;
+        @include SP{
+            margin: 30px 15px 0;
+            padding: 20px 15px;
+        }
 		&.active{
 			display: block;
 		}
 		p{
-			text-align: center;
-			font-size: 14px;
+            line-height: 1.5;
+            @include PC{
+                font-size: 14px;
+                text-align: center;
+            }
+            @include SP{
+                font-size: 12px;
+            }
 		}
 		ul{
 			display: flex;
@@ -69,6 +89,16 @@
 			}
 		}
 	}
+    .nothing{
+        margin-top: 40px;
+        text-align: center;
+        @include PC{
+			padding: 0 60px;
+		}
+		@include SP{
+			margin-top: 20px;
+		}
+    }
 	.workLists{
 		margin-top: 40px;
 		@include PC{
