@@ -17,9 +17,10 @@ use Illuminate\Support\Facades\Route;
 //     return view('welcome');
 // });
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth'])->name('dashboard');
+Route::namespace('Admin')->prefix('admin')->middleware(['auth'])->group(function(){
+    Route::get('dashboard',"AdminController@dashboard")->name('dashboard');
+    Route::get('create',"AdminController@create")->name('create');
+});
 
 require __DIR__.'/auth.php';
 
