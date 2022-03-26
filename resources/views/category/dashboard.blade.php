@@ -2,14 +2,14 @@
     <x-slot name="header">
         <div class="flex justify-between items-center">
             <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-                {{ __('Dashboard') }}
+                {{ __('カテゴリ') }}
             </h2>
             <div>
                 <button type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">
-                    <a href="{{route("category.dashboard")}}">カテゴリ管理</a>
+                    <a href="{{route("dashboard")}}">ダッシュボード</a>
                 </button>
                 <button type="button" class="focus:outline-none ml-2 text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800">
-                    <a href="{{route("create")}}">新規作成</a>
+                    <a href="{{route("category.create")}}">新規作成</a>
                 </button>
             </div>
         </div>
@@ -26,9 +26,6 @@
                                     タイトル
                                 </th>
                                 <th scope="col" class="px-6 py-3">
-                                    URL
-                                </th>
-                                <th scope="col" class="px-6 py-3">
                                     Edit
                                 </th>
                                 <th scope="col" class="px-6 py-3">
@@ -37,23 +34,18 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ($works as $work)
+                            @foreach ($categories as $category)
                                 <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
                                     <th scope="row" class="px-6 py-4 font-medium text-gray-900 dark:text-white whitespace-nowrap">
-                                        {{$work->title}}
+                                        {{$category->category}}
                                     </th>
                                     <td class="px-6 py-4">
-                                        <a href="{{$work->url}}" target="_blank" rel="noopener noreferrer">
-                                            {{$work->url}}
-                                        </a>
+                                        <a href="{{route('category.edit', ['id' => $category->id])}}" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">編集する</a>
                                     </td>
                                     <td class="px-6 py-4">
-                                        <a href="{{route('edit', ['id' => $work->id])}}" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">編集する</a>
-                                    </td>
-                                    <td class="px-6 py-4">
-                                        <form action="{{route('destroy', ['id' => $work->id])}}" method='post' id="delete_{{$work->id}}">
+                                        <form action="{{route('category.destroy', ['id' => $category->id])}}" method='post' id="delete_{{$category->id}}">
                                             @csrf
-                                            <a href="#" class="font-medium text-red-600 dark:text-red-500 hover:underline" data-id="{{$work->id}}" onClick="delete_alert(this); return false">削除する</a>
+                                            <a href="#" class="font-medium text-red-600 dark:text-red-500 hover:underline" data-id="{{$category->id}}" onClick="delete_alert(this); return false">削除する</a>
                                         </form>
                                     </td>
                                 </tr>

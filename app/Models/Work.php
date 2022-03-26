@@ -9,7 +9,7 @@ class Work extends Model
 {
     use HasFactory;
     protected $fillable = [
-        "title","comment",'url'
+        "title","comment",'url','github'
     ];
     public function categories(){
         return $this->belongsToMany(Category::class,WorkCategory::class);

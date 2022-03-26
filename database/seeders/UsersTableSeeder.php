@@ -19,7 +19,7 @@ class UsersTableSeeder extends Seeder
             [
                 'name' => '渡邉雅広',
                 'email' => 'masahiro.watanabe02@gmail.com',
-                'password' => Hash::make("12345678"),
+                'password' => Hash::make("TiPqK3GuzVNN"),
                 "created_at" => now(),
                 "updated_at" => now(),
             ],
